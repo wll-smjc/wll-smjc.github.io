@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            /* 设置容器高度为视口高度 */
+        }
+
+        .sidebar {
+            width: 200px;
+            /* 左侧菜单展开时的宽度 */
+            background-color: #f0f0f0;
+            transition: width 0.3s;
+            /* 动画效果 */
+        }
+
+        .sidebar.collapsed {
+            width: 50px;
+            /* 左侧菜单收起时的宽度 */
+        }
+
+        .content {
+            flex: 1;
+            /* 右侧内容自适应宽度 */
+            background-color: #e0e0e0;
+            transition: margin-left 0.3s;
+            /* 动画效果 */
+        }
+
+        .sidebar.collapsed+.content {
+            margin-left: 50px;
+            /* 收起时右侧内容的左边距 */
+        }
+
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-items a {
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .menu-items a:hover {
+            background-color: #ddd;
+            /* 鼠标悬停效果 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <button id="toggle-button">切换菜单</button>
+            <div class="menu-items">
+                <a href="#">菜单项 1</a>
+                <a href="#">菜单项 2</a>
+                <a href="#">菜单项 3</a>
+            </div>
+        </div>
+        <div class="content">
+            <h1>右侧内容</h1>
+            <p>这是右侧内容区域。</p>
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const button = document.getElementById('toggle-button');
+
+        button.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+
+
+    </script>
+
+</body>
+
+</html>

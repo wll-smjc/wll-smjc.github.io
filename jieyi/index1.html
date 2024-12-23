@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汪汪</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="shell">
+        <ul class="nav">
+            <li class="active" id="logo">
+                <a href="#">
+                    <div class="icon">
+                        <div class="imageBox">
+                            <img src="./img/img1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="text">汪汪</div>
+                </a>
+            </li>
+            <li>
+                <a href="#home">
+                    <div class="icon">
+                        <i class="iconfont icon-cangku"></i>
+                    </div>
+                    <div class="text">Home</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao1">
+                    <div class="icon">
+                        <i class="iconfont icon-zhuti_tiaosepan"></i>
+                    </div>
+                    <div class="text">时静时静</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao2">
+                    <div class="icon">
+                        <i class="iconfont icon-qianbao"></i>
+                    </div>
+                    <div class="text">临寒</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao3">
+                    <div class="icon">
+                        <i class="iconfont icon-tupian"></i>
+                    </div>
+                    <div class="text">雨惜风</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao4">
+                    <div class="icon">
+                        <i class="iconfont icon-erweima"></i>
+                    </div>
+                    <div class="text">止情</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao5">
+                    <div class="icon">
+                        <i class="iconfont icon-dunpaibaoxianrenzheng"></i>
+                    </div>
+                    <div class="text">小果叮</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao6">
+                    <div class="icon">
+                        <i class="iconfont icon-dunpaibaoxianrenzheng"></i>
+                    </div>
+                    <div class="text">邱首映红</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao7">
+                    <div class="icon">
+                        <i class="iconfont icon-dunpaibaoxianrenzheng"></i>
+                    </div>
+                    <div class="text">卿蛊</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao8">
+                    <div class="icon">
+                        <i class="iconfont icon-dunpaibaoxianrenzheng"></i>
+                    </div>
+                    <div class="text">兮岚潇</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao9">
+                    <div class="icon">
+                        <i class="iconfont icon-dunpaibaoxianrenzheng"></i>
+                    </div>
+                    <div class="text">砚九</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao10">
+                    <div class="icon">
+                        <i class="iconfont icon-dunpaibaoxianrenzheng"></i>
+                    </div>
+                    <div class="text">扈风</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao11">
+                    <div class="icon">
+                        <i class="iconfont icon-dunpaibaoxianrenzheng"></i>
+                    </div>
+                    <div class="text">鹪鹪</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao12">
+                    <div class="icon">
+                        <i class="iconfont icon-dunpaibaoxianrenzheng"></i>
+                    </div>
+                    <div class="text">梁又年</div>
+                </a>
+            </li>
+            <li>
+                <a href="#me">
+                    <div class="icon">
+                        <div class="imageBox">
+                            <img src="./img/img1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="text">ME</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 音乐播放器 -->
+    <div></div>
+    <div class="content">
+        <section id="home" style="background: url(./img2.jpg)no-repeat;">Home</section>
+        <section id="lao1">时静时静</section>
+        <section id="lao2">临寒</section>
+        <section id="lao3">雨惜风</section>
+        <section id="lao4">止情</section>
+        <section id="lao5">小果叮</section>
+        <section id="lao6">邱首映红</section>
+        <section id="lao7">卿蛊</section>
+        <section id="lao8">兮岚潇</section>
+        <section id="lao9">砚九</section>
+        <section id="lao10">扈风</section>
+        <section id="lao11">鹪鹪</section>
+        <section id="lao12">梁又年</section>
+        <section id="me">ME</section>
+    </div>
+</body>
+
+<script>
+    let nav = document.querySelectorAll(".nav li");
+    function activeLink() {
+        nav.forEach((item) => item.classList.remove("active"));
+        this.classList.add("active");
+    }
+    nav.forEach((item) => item.addEventListener("click", activeLink));
+
+    let nav1 = document.querySelector(".nav");
+    let content = document.querySelector(".content");
+    nav1.addEventListener("mouseenter", () => {
+        nav1.classList.add("show");
+        content.classList.add("shift");
+    });
+    nav1.addEventListener("mouseleave", () => {
+        nav1.classList.remove("show");
+        content.classList.remove("shift");
+    });
+
+    let sections = document.querySelectorAll(".content section");
+    let currentIndex = 0;
+
+    // 添加点击事件监听器到 content 容器
+    content.addEventListener("click", () => {
+        if (currentIndex < sections.length - 1) {
+            currentIndex++;  // 移动到下一个 section
+            sections[currentIndex].scrollIntoView({ behavior: "smooth" });  // 平滑滚动
+        }
+    });
+
+    // 设置初始的 section 为 0，用于监听和滚动
+    sections.forEach((section, index) => {
+        section.addEventListener("mouseenter", () => {
+            currentIndex = index;  // 更新 currentIndex
+        });
+    });
+
+</script>
+
+</html>

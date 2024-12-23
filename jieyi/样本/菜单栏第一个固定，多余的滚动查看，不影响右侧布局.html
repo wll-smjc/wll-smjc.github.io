@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        /* 固定的菜单栏 */
+        .sidebar {
+            width: 200px; /* 侧边栏的宽度 */
+            background-color: #f3f3f3;
+            position: relative;
+        }
+        /* 可滚动的列表 */
+        .menu-list {
+            overflow-y: auto;
+            height: calc(100vh - 50px); /* 减去固定的头部高度 */
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        /* 固定的第一个菜单项 */
+        .menu-list li:first-child {
+            position: sticky;
+            top: 0;
+            background: white; /* 背景色与侧边栏一致 */
+        }
+        /* 每个菜单项的样式 */
+        .menu-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul class="menu-list">
+            <li class="active" id="logo" style="background-color: white;">
+                <a href="#">
+                    <div class="icon">
+                        <div class="imageBox">
+                            <img src="./img1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="text">汪汪</div>
+                </a>
+            </li>
+            <li>
+                <a href="#home">
+                    <div class="icon">
+                        <i class="iconfont icon-cangku"></i>
+                    </div>
+                    <div class="text">Home</div>
+                </a>
+            </li>
+            <li>
+                <a href="#lao1">
+                    <div class="icon">
+                        <i class="iconfont icon-zhuti_tiaosepan"></i>
+                    </div>
+                    <div class="text">lao1</div>
+                </a>
+            </li>
+            <!-- 其他菜单项... -->
+            <li>
+                <a href="#me">
+                    <div class="icon">
+                        <div class="imageBox">
+                            <img src="./img1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="text">ME</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
