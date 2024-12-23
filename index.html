@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>归林的加载</title>
+    <style>
+        #loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 24px;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+            <div class="wheel"></div>
+            <div class="hamster">
+                <div class="hamster__body">
+                    <div class="hamster__head">
+                        <div class="hamster__ear"></div>
+                        <div class="hamster__eye"></div>
+                        <div class="hamster__nose"></div>
+                    </div>
+                    <div class="hamster__limb hamster__limb--fr"></div>
+                    <div class="hamster__limb hamster__limb--fl"></div>
+                    <div class="hamster__limb hamster__limb--br"></div>
+                    <div class="hamster__limb hamster__limb--bl"></div>
+                    <div class="hamster__tail"></div>
+                </div>
+            </div>
+            <div class="spoke"></div>
+        </div>
+        <div class="text">--归林--</div>
+    </div>
+    <script>
+        // 模拟加载时间
+        const loadingTime = 10000;
+        const mainPageUrl = '小东西/鼠标跟随.html'; // 主页面的URL
+
+        // 创建一个加载完成的Promise
+        const loadingPromise = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve();
+            }, loadingTime);
+        });
+
+        // 加载页面
+        loadingPromise.then(() => {
+            // 这里可以添加检测是否加载完成的逻辑
+            const isLoadCompleted = true; // 这个变量可以改为实际的加载状态检查
+
+            if (isLoadCompleted) {
+                // 加载完成，跳转到主页面
+                window.location.href = mainPageUrl;
+            } else {
+                // 仍未完成，保持加载页面
+                // 可以在这里继续保持加载的逻辑
+            }
+        });
+    </script>
+</body>
+
+</html>
